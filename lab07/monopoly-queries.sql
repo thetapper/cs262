@@ -1,3 +1,10 @@
+--
+-- This SQL script implements sample queries on the Monopoly database.
+--
+-- @author kvlinden
+-- @version Summer, 2015
+--
+
 -- Get the number of Game records.
 SELECT *
   FROM Game
