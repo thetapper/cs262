@@ -13,31 +13,31 @@ DROP TABLE IF EXISTS Supplier;
 
 -- Create the schema.
 CREATE TABLE Supplier (
-	ID integer PRIMARY KEY,
-	name varchar(25),
-	loginID varchar(10) NOT NULL,
-	password varchar(20)
-	);
+                          ID integer PRIMARY KEY,
+                          name varchar(25),
+                          loginID varchar(10) NOT NULL,
+                          password varchar(20)
+);
 
 CREATE TABLE Part (
-	ID integer PRIMARY KEY,
-	name varchar(25),
-	price decimal,
-	supplierID integer REFERENCES Supplier(ID)
-	);
+                      ID integer PRIMARY KEY,
+                      name varchar(25),
+                      price decimal,
+                      supplierID integer REFERENCES Supplier(ID)
+);
 
 CREATE TABLE Job (
-	ID integer PRIMARY KEY,
-	name varchar(25),
-	address varchar(30)
-	);
+                     ID integer PRIMARY KEY,
+                     name varchar(25),
+                     address varchar(30)
+);
 
 CREATE TABLE PartJob (
-	partID integer REFERENCES Part(ID),
-	jobID integer REFERENCES Job(ID),
-	quantity integer,
-	date DATE
-	);
+                         partID integer REFERENCES Part(ID),
+                         jobID integer REFERENCES Job(ID),
+                         quantity integer,
+                         date DATE
+);
 
 -- Allow users to select data from the tables.
 GRANT SELECT ON Supplier TO PUBLIC;

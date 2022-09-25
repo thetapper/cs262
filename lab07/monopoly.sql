@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS Player;
 
 -- Create the schema.
 CREATE TABLE Game (
-	ID integer PRIMARY KEY, 
+	ID integer PRIMARY KEY,
 	time timestamp
 	);
 
