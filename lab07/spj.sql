@@ -22,7 +22,7 @@ CREATE TABLE Supplier (
 CREATE TABLE Part (
 	ID integer PRIMARY KEY,
 	name varchar(25),
-	price decimal,
+	price integer, -- in cents
 	supplierID integer REFERENCES Supplier(ID)
 	);
 
@@ -48,15 +48,18 @@ GRANT SELECT ON PartJob TO PUBLIC;
 -- Add sample records.
 INSERT INTO Supplier VALUES (1, 'Acme', 'acme', 'joshua');
 INSERT INTO Supplier VALUES (2, 'Ronco', 'ronc', 'ronc');
+INSERT INTO Supplier VALUES (3, 'Popiel', 'popi', 'pp123');
 
-INSERT INTO Part VALUES (1, 'birdseed', 5.00, 1);
-INSERT INTO Part VALUES (2, 'TNT', 90.00, 1);
-INSERT INTO Part VALUES (3, 'lead shot', 20.00, 1);
-INSERT INTO Part VALUES (4, 'Popiel pocket fisherman', 19.99, 2);
+INSERT INTO Part VALUES (1, 'Birdseed', 500, 1);
+INSERT INTO Part VALUES (2, 'TNT', 10000, 1);
+INSERT INTO Part VALUES (3, 'Lead shot', 2000, 1);
+INSERT INTO Part VALUES (4, 'Pocket fisherman', 1999, 3);
 
 INSERT INTO Job VALUES (1, 'Student Union', 'Calvin');
-INSERT INTO Job VALUES (2, NULL, 'Amway');
+INSERT INTO Job VALUES (2, NULL, 'Calvin');
+INSERT INTO Job VALUES (3, 'Art Museum', 'Grand Rapids');
 
 INSERT INTO PartJob VALUES (1, 1, 10, '2018-10-20');
-INSERT INTO PartJob VALUES (2, 1, 2, '2018-10-21');
-INSERT INTO PartJob VALUES (1, 2, 2, '2018-10-21');
+INSERT INTO PartJob VALUES (2, 2, 2, '2018-10-21');
+INSERT INTO PartJob VALUES (1, 2, 3, '2018-10-21');
+INSERT INTO PartJob VALUES (4, 1, 2, '2018-10-22');
