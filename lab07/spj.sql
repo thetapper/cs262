@@ -16,7 +16,8 @@ CREATE TABLE Supplier (
                           ID integer PRIMARY KEY,
                           name varchar(25),
                           loginID varchar(10) NOT NULL,
-                          password varchar(20)
+                          password varchar(20),
+                          address varchar(20)
 );
 
 CREATE TABLE Part (
@@ -46,13 +47,13 @@ GRANT SELECT ON Job TO PUBLIC;
 GRANT SELECT ON PartJob TO PUBLIC;
 
 -- Add sample records.
-INSERT INTO Supplier VALUES (1, 'Acme', 'acme', 'joshua');
-INSERT INTO Supplier VALUES (2, 'Ronco', 'ronc', 'ronc');
-INSERT INTO Supplier VALUES (3, 'Popiel', 'popi', 'pp123');
+INSERT INTO Supplier VALUES (1, 'Acme', 'acme', 'joshua', 'Grand Rapids, MI');
+INSERT INTO Supplier VALUES (2, 'Ronco', 'ronc', 'ronc', 'Detroit, MI');
+INSERT INTO Supplier VALUES (3, 'Popiel', 'popi', 'pp123', 'Grand Rapids, MI');
 
 INSERT INTO Part VALUES (1, 'Birdseed', 500, 1);
 INSERT INTO Part VALUES (2, 'TNT', 10000, 1);
-INSERT INTO Part VALUES (3, 'Lead shot', 2000, 1);
+INSERT INTO Part VALUES (3, 'Lead shot', 2000, NULL);
 INSERT INTO Part VALUES (4, 'Pocket fisherman', 1999, 3);
 
 INSERT INTO Job VALUES (1, 'Student Union', 'Calvin');

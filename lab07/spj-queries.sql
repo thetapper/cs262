@@ -19,11 +19,3 @@ SELECT *
 FROM Job
 WHERE name IS NULL
 ;
-
--- Get the names and quantities of parts supplied to jobs at Calvin.
-SELECT Part.name, PartJob.quantity
-FROM Part, PartJob, Job
-WHERE Part.ID = PartJob.PartID
-  AND PartJob.JobId = Job.ID
-  AND Job.address = 'Calvin'
-;
