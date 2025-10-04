@@ -12,9 +12,11 @@
 import React from "react";
 import { Stack } from "expo-router";
 import { commonStyles, headerConfig } from "../styles/common";
+import { ItemProvider } from "@/context/ItemContext";
 
 export default function RootLayout() {
     return (
+        <ItemProvider>
         <Stack>
             <Stack.Screen
                 name="index"
@@ -33,5 +35,6 @@ export default function RootLayout() {
                 }}
             />
         </Stack>
+        </ItemProvider>
     );
 }

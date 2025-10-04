@@ -11,11 +11,11 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native
 import { useRouter } from "expo-router";
 import { Item } from "../types/Item";
 import { commonStyles } from "../styles/common";
-import initialItemsData from "../data/items.json";
+import { useItemContext } from "@/context/ItemContext";
 
 export default function Index() {
     // Load items from static JSON data file
-    const items: Item[] = initialItemsData as Item[];
+    const {items} = useItemContext();
     const router = useRouter();
 
     // Renders an individual item
@@ -24,7 +24,7 @@ export default function Index() {
             style={styles.itemContainer}
             onPress={() => router.push({
                 pathname: "./details",
-                params: { itemString: JSON.stringify(item) }
+                params: { itemId: item.id }
             })}
         >
             <View style={styles.itemContent}>
@@ -95,3 +95,4 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 });
+

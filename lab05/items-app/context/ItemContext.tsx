@@ -58,11 +58,15 @@ export const ItemProvider: React.FC<{ children: ReactNode }> = ({
     /**
      * Removes an item from the list by filtering out the matching ID
      *
+     * Uses React.useCallback to memoize the function, which prevents
+     * unnecessary re-renders of child components that receive this
+     * function as a prop.
+     *
      * @param id - The unique identifier of the item to delete
      */
-    const deleteItem = (id: string) => {
+    const deleteItem = React.useCallback((id: string) => {
         setItems((prevItems) => prevItems.filter((item) => item.id !== id));
-    };
+    }, []); // Empty dependency array - function doesn't depend on any props or state
 
     // Context value object containing all state and actions
     const value: ItemContextType = {

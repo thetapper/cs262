@@ -13,18 +13,20 @@
 
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert } from "react-native";
-import { useRouter, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, router } from "expo-router";
 import { Item, defaultItem } from "../types/Item";
 import { commonStyles } from "../styles/common";
+import { useItemContext } from "@/context/ItemContext";
 
 export default function Details() {
-    // Extract the item data (a string) from navigation parameters
-    const { itemString } = useLocalSearchParams();
-    const router = useRouter();
+
+    // Extract only the itemId from navigation parameters
+    const { itemId } = useLocalSearchParams();
+
+    const {items, deleteItem } = useItemContext();
 
     // Parse the JSON string back to an Item object, using defaultItem as a backup.
-    let selectedItem: Item = JSON.parse(itemString as string);
-    if (selectedItem.id === '') selectedItem = defaultItem;
+    const selectedItem: Item = items.find(item => item.id === itemId) || defaultItem;
 
     // Handles item deletion with user confirmation
     const handleDelete = () => {
@@ -44,9 +46,10 @@ export default function Details() {
                     onPress: () => {
                         // In a simple, props-based app, this delete is inoperative.
                         // For now, we'll just log a message and navigate back.
-                        console.log(`Should delete item: ${selectedItem.title}`);
-                        router.back();
-                    },
+                    deleteItem(selectedItem.id);
+                    console.log(`Item with ID ${selectedItem.id} deleted.`);
+                    router.back();
+                },
                 },
             ]
         );
