@@ -21,3 +21,4 @@ dist/
 build/
 lab07/
 lab08/
+node_modules/
