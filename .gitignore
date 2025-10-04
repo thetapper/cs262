@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Node / React Native / Expo
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+expo-debug.log*
+package-lock.json
+
+# TypeScript
+*.tsbuildinfo
+
+# IDEs
+.vscode/
+.idea/
+
+# Build / output
+dist/
+build/
