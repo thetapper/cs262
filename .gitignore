@@ -19,3 +19,5 @@ package-lock.json
 # Build / output
 dist/
 build/
+lab07/
+lab08/
