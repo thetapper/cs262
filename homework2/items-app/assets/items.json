@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "The Great Gatsby",
+    "description": "A classic American novel by F. Scott Fitzgerald about the Jazz Age",
+    "price": 12.99
+  },
+  {
+    "id": 2,
+    "name": "To Kill a Mockingbird",
+    "description": "A novel by Harper Lee about racial injustice in the Deep South",
+    "price": 14.99
+  },
+  {
+    "id": 3,
+    "name": "1984",
+    "description": "A dystopian novel by George Orwell about totalitarianism",
+    "price": 13.99
+  },
+  {
+    "id": 4,
+    "name": "Pride and Prejudice",
+    "description": "A romantic novel by Jane Austen",
+    "price": 11.99
+  }
+]
