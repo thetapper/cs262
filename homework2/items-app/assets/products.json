@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "title": "Wireless Headphones",
+    "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life. Perfect for music lovers and professionals.",
+    "price": 199.99,
+    "releaseYear": "2023"
+  },
+  {
+    "id": "2",
+    "title": "Smart Watch",
+    "description": "Feature-rich smartwatch with fitness tracking, heart rate monitor, and smartphone notifications. Water resistant up to 50 meters.",
+    "price": 299.99,
+    "releaseYear": "2024"
+  },
+  {
+    "id": "3",
+    "title": "Laptop Stand",
+    "description": "Ergonomic aluminum laptop stand with adjustable height and angle. Compatible with all laptop sizes from 10 to 17 inches.",
+    "price": 49.99,
+    "releaseYear": "2022"
+  },
+  {
+    "id": "4",
+    "title": "USB-C Hub",
+    "description": "7-in-1 USB-C hub with HDMI, USB 3.0 ports, SD card reader, and power delivery. Ideal for MacBook and other USB-C devices.",
+    "price": 39.99,
+    "releaseYear": "2023"
+  },
+  {
+    "id": "5",
+    "title": "Mechanical Keyboard",
+    "description": "RGB backlit mechanical keyboard with blue switches. Durable construction with programmable keys and N-key rollover.",
+    "price": 129.99,
+    "releaseYear": "2023"
+  }
+]
